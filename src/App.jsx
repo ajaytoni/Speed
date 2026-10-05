@@ -6806,137 +6806,242 @@ export default function App() {
 
   `}</style>
 
+{/* =====================================================
+    SERVICES
+===================================================== */}
 
-  {/* =====================================================
-      SERVICES
-  ===================================================== */}
+<div className="container">
+
+  <div className="section-heading reveal">
+
+    <div className="eyebrow">
+      OUR SERVICES
+    </div>
+
+    <h2
+      className="blink-text"
+      style={{
+        color: "#26352A",
+      }}
+    >
+      Moving solutions for
+      different requirements.
+    </h2>
+
+    <p
+      style={{
+        color: "#526052",
+      }}
+    >
+      From household belongings
+      to office equipment, our
+      services are designed around
+      the practical stages of
+      relocation.
+    </p>
+
+  </div>
+
+
+  {/* =================================================
+      SERVICE CARDS
+  ================================================= */}
+
+  <div className="service-grid">
+
+    {services.map(
+      (service, index) => (
+
+        <div
+          className="service-card reveal"
+          key={service.title}
+          style={{
+            transitionDelay:
+              `${index * 70}ms`,
+          }}
+        >
+
+          {/* SERVICE IMAGE */}
+
+          <div className="speedway-service-image">
+
+            <img
+              src={
+                index === 0
+                  ? "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=85"
+
+                  /* OFFICE RELOCATION */
+                  : index === 1
+                  ? "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"
+
+                  /* PACKING & UNPACKING - PACKED BOXES */
+                  : index === 2
+                  ? "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85"
+
+                  /* LOCAL SHIFTING */
+                  : index === 3
+                  ? "https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=85"
+
+                  /* INTERCITY RELOCATION */
+                  : index === 4
+                  ? "https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?auto=format&fit=crop&w=900&q=85"
+
+                  /* VEHICLE TRANSPORTATION */
+                  : "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=85"
+              }
+              alt={service.title}
+              loading="lazy"
+            />
+
+          </div>
+
+
+          {/* SERVICE ICON */}
+
+          <div className="service-icon">
+            {service.icon}
+          </div>
+
+
+          {/* SERVICE TITLE */}
+
+          <h3
+            className="blink-text"
+            style={{
+              color: "#26352A",
+            }}
+          >
+            {service.title}
+          </h3>
+
+
+          {/* SERVICE DESCRIPTION */}
+
+          <p
+            style={{
+              color: "#526052",
+            }}
+          >
+            {service.text}
+          </p>
+
+
+          {/* LEARN MORE */}
+
+          <span
+            className="service-link"
+            onClick={() =>
+              setSelectedService(service)
+            }
+          >
+            Learn More →
+          </span>
+
+        </div>
+
+      )
+    )}
+
+  </div>
+
+</div>
+
+
+
+{/* =====================================================
+    ADVANTAGES
+===================================================== */}
+
+<section className="section dark">
 
   <div className="container">
 
     <div className="section-heading reveal">
 
       <div className="eyebrow">
-        OUR SERVICES
+        WHY CHOOSE US
       </div>
 
-      <h2
-        className="blink-text"
-        style={{
-          color: "#26352A",
-        }}
-      >
-        Moving solutions for
-        different requirements.
+      <h2 className="blink-text">
+        Practical support at
+        every stage.
       </h2>
 
-      <p
-        style={{
-          color: "#526052",
-        }}
-      >
-        From household belongings
-        to office equipment, our
-        services are designed around
-        the practical stages of
-        relocation.
+      <p>
+        A relocation becomes easier
+        when packing, loading,
+        transportation and delivery
+        are planned properly.
       </p>
 
     </div>
 
 
-    {/* =================================================
-        SERVICE CARDS
-    ================================================= */}
+    <div className="advantage-grid">
 
-    <div className="service-grid">
-
-      {services.map(
-        (service, index) => (
+      {advantages.map(
+        (item, index) => (
 
           <div
-            className="service-card reveal"
-            key={service.title}
+            className="advantage-card reveal"
+            key={item.title}
             style={{
               transitionDelay:
-                `${index * 70}ms`,
+                `${index * 80}ms`,
             }}
           >
 
-            {/* SERVICE IMAGE */}
+            {/* ADVANTAGE IMAGE */}
 
-            <div className="speedway-service-image">
+            <div className="speedway-advantage-image">
 
               <img
                 src={[
-                  /* HOUSE SHIFTING */
+                  /* =================================================
+                     1. CAREFUL PACKING
+                  ================================================= */
                   "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=900&q=85",
 
-                  /* OFFICE RELOCATION */
-                  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85",
+                  /* =================================================
+                     2. RELIABLE TRANSPORTATION
+                  ================================================= */
+                  "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=85",
 
-                  /* PACKING & UNPACKING */
-                  "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85",
+                  /* =================================================
+                     3. MOVING ASSISTANCE
+                     Movers carrying furniture / household items
+                  ================================================= */
+                  "https://kvlg.ru/sites/default/files/img/uslugi/service/perevozka-s-gruzchikami.webp",
 
-                  /* LOCAL SHIFTING */
-                  "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",
+                  /* =================================================
+                     4. DOOR-TO-DOOR SUPPORT
+                     Delivery at customer's doorstep
+                  ================================================= */
+                  "https://lirp.cdn-website.com/32692288/dms3rep/multi/opt/Security%2BMoving%2B2-1920w.jpg",
 
-                  /* INTERCITY RELOCATION */
-                  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
-
-                  /* VEHICLE TRANSPORTATION */
-                  "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=85",
-
-                ][index % 6]}
-                alt={service.title}
+                ][index % 4]}
+                alt={item.title}
                 loading="lazy"
               />
 
             </div>
 
 
-            {/* SERVICE ICON */}
-
-            <div className="service-icon">
-              {service.icon}
+            <div className="advantage-icon">
+              {item.icon}
             </div>
 
 
-            {/* SERVICE TITLE */}
-
-            <h3
-              className="blink-text"
-              style={{
-                color: "#26352A",
-              }}
-            >
-              {service.title}
+            <h3 className="blink-text">
+              {item.title}
             </h3>
 
 
-            {/* SERVICE DESCRIPTION */}
-
-            <p
-              style={{
-                color: "#526052",
-              }}
-            >
-              {service.text}
+            <p>
+              {item.text}
             </p>
 
-
-            {/* LEARN MORE */}
-
-            <span
-              className="service-link"
-              onClick={() =>
-                setSelectedService(service)
-              }
-            >
-              Learn More →
-            </span>
-
           </div>
-
         )
       )}
 
@@ -6944,210 +7049,127 @@ export default function App() {
 
   </div>
 
+</section>
 
 
-  {/* =====================================================
-      ADVANTAGES
-  ===================================================== */}
 
-  <section className="section dark">
+{/* =====================================================
+    PROCESS
+===================================================== */}
 
-    <div className="container">
+<section
+  id="process"
+  className="section"
+>
 
-      <div className="section-heading reveal">
+  <div className="container">
 
-        <div className="eyebrow">
-          WHY CHOOSE US
-        </div>
+    <div className="section-heading reveal">
 
-        <h2 className="blink-text">
-          Practical support at
-          every stage.
-        </h2>
-
-        <p>
-          A relocation becomes easier
-          when packing, loading,
-          transportation and delivery
-          are planned properly.
-        </p>
-
+      <div className="eyebrow">
+        OUR PROCESS
       </div>
 
+      <h2 className="blink-text">
+        Simple steps from pickup
+        to delivery.
+      </h2>
 
-      <div className="advantage-grid">
-
-        {advantages.map(
-          (item, index) => (
-
-            <div
-              className="advantage-card reveal"
-              key={item.title}
-              style={{
-                transitionDelay:
-                  `${index * 80}ms`,
-              }}
-            >
-
-              {/* ADVANTAGE IMAGE */}
-
-              <div className="speedway-advantage-image">
-
-                <img
-                  src={[
-                    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85",
-
-                    "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=900&q=85",
-
-                    "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=85",
-
-                    "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=900&q=85",
-
-                    "https://images.unsplash.com/photo-1586528116493-da8b4e2c9f2f?auto=format&fit=crop&w=900&q=85",
-
-                    "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=85",
-
-                  ][index % 6]}
-                  alt={item.title}
-                  loading="lazy"
-                />
-
-              </div>
-
-
-              <div className="advantage-icon">
-                {item.icon}
-              </div>
-
-
-              <h3 className="blink-text">
-                {item.title}
-              </h3>
-
-
-              <p>
-                {item.text}
-              </p>
-
-            </div>
-
-          )
-        )}
-
-      </div>
+      <p>
+        We keep the moving process
+        easy to understand so you know
+        what happens at each stage.
+      </p>
 
     </div>
 
-  </section>
+
+    <div className="process-grid">
+
+      {process.map(
+        (item, index) => (
+
+          <div
+            className="process-card reveal"
+            key={item.number}
+            style={{
+              transitionDelay:
+                `${index * 70}ms`,
+            }}
+          >
+
+            {/* PROCESS IMAGE */}
+
+            <div className="speedway-process-image">
+
+              <img
+                src={[
+                  /* =================================================
+                     1. CAREFUL PACKING
+                     PERSON CAREFULLY WRAPPING FRAGILE ITEM
+                  ================================================= */
+                  "https://galaxyremovals.co.uk/_next/static/media/fragile.9161432e.jpeg",
+
+                  /* =================================================
+                     2. RELIABLE TRANSPORTATION
+                     MOVING TRUCK ON HIGHWAY
+                  ================================================= */
+                  "https://nextphasemoving.com/assets/images/photos/truck-photo-desktop.jpg",
+
+                  /* =================================================
+                     3. MOVING ASSISTANCE
+                     MOVERS CARRYING FURNITURE
+                  ================================================= */
+                  "https://kvlg.ru/sites/default/files/img/uslugi/service/perevozka-s-gruzchikami.webp",
+
+                  /* =================================================
+                     4. DOOR TO DOOR DELIVERY
+                     DELIVERY WORKER HANDING PACKAGE
+                  ================================================= */
+                  "https://imgcp.aacdn.jp/img-a/800/600/aa/gm/article/5/0/5/1/5/6/202408081959/800__image_03.jpg",
+
+                ][index % 4]}
+                alt={item.title}
+                loading="lazy"
+              />
 
 
-
-  {/* =====================================================
-      PROCESS
-  ===================================================== */}
-
-  <section
-    id="process"
-    className="section"
-  >
-
-    <div className="container">
-
-      <div className="section-heading reveal">
-
-        <div className="eyebrow">
-          OUR PROCESS
-        </div>
-
-        <h2 className="blink-text">
-          Simple steps from pickup
-          to delivery.
-        </h2>
-
-        <p>
-          We keep the moving process
-          easy to understand so you know
-          what happens at each stage.
-        </p>
-
-      </div>
-
-
-      <div className="process-grid">
-
-        {process.map(
-          (item, index) => (
-
-            <div
-              className="process-card reveal"
-              key={item.number}
-              style={{
-                transitionDelay:
-                  `${index * 70}ms`,
-              }}
-            >
-
-              {/* PROCESS IMAGE */}
-
-              <div className="speedway-process-image">
-
-                <img
-                  src={[
-                    /* CAREFUL PACKING */
-                    "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=900&q=85",
-
-                    /* RELIABLE TRANSPORTATION */
-                    "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=85",
-
-                    /* MOVING ASSISTANCE */
-                    "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=85",
-
-                    /* DOOR TO DOOR SUPPORT */
-                    "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85",
-
-                  ][index % 4]}
-                  alt={item.title}
-                  loading="lazy"
-                />
-
-
-                <div className="speedway-process-image-number">
-                  {item.number}
-                </div>
-
-              </div>
-
-
-              {/* PROCESS NUMBER */}
-
-              <div className="process-number blink-text">
+              <div className="speedway-process-image-number">
                 {item.number}
               </div>
 
-
-              {/* PROCESS TITLE - ALL GREEN */}
-
-              <h3>
-                {item.title}
-              </h3>
-
-
-              {/* PROCESS DESCRIPTION */}
-
-              <p>
-                {item.text}
-              </p>
-
             </div>
 
-          )
-        )}
 
-      </div>
+            {/* PROCESS NUMBER */}
+
+            <div className="process-number blink-text">
+              {item.number}
+            </div>
+
+
+            {/* PROCESS TITLE */}
+
+            <h3>
+              {item.title}
+            </h3>
+
+
+            {/* PROCESS DESCRIPTION */}
+
+            <p>
+              {item.text}
+            </p>
+
+          </div>
+        )
+      )}
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 </section>
         {/* MOVING JOURNAL */}

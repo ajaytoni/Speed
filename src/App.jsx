@@ -1969,7 +1969,7 @@ export default function App() {
           flex-direction: column;
           align-items: flex-start;
           padding: 18px;
-          background: #0b0f0c;
+          background:  rgba(225, 191, 169, 0.45);
           border-radius: 15px;
           border: 1px solid
             rgba(255, 255, 255, 0.14);
@@ -1979,7 +1979,7 @@ export default function App() {
 
         .advantage-card:hover {
           transform: translateY(-6px);
-          background: #0b0f0c;
+          background: #304535;
         }
 
         .advantage-icon {
@@ -2004,7 +2004,7 @@ export default function App() {
 
         .advantage-card p {
           width: 100%;
-          color: #edf5e9;
+          color: #e2e6e1;
           line-height: 1.65;
           font-size: 13px;
           margin: 0;
@@ -2231,14 +2231,14 @@ export default function App() {
           background:
             radial-gradient(
               circle at 90% 20%,
-              rgba(217, 107, 39, 0.45),
+              rgba(225, 191, 169, 0.45),
               transparent 28%
             ),
             linear-gradient(
               120deg,
-              #0b0f0c,
-              #0b0f0c,
-              #5f9f3a
+              #a2afa5,
+              #7da186,
+              #93bc7b
             );
 
           color: #ffffff;
